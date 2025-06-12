@@ -36,7 +36,7 @@ class MetricsRecorder final {
 
   MetricsRecorder() = delete;
 
-  // Construtor to link to a file
+  // Construсtor to link to a file
   explicit MetricsRecorder(const std::string& log_filename)
       : log_file_(log_filename) {
     if (not log_file_.is_open())
