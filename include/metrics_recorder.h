@@ -29,12 +29,14 @@ namespace metrics_recorder {
 template <class ValueType>
 class MetricsRecorder final {
  public:
+  // Lock free map for recording metrics in lexicographic order
   cds::container::SkipListMap<cds::gc::HP, std::string, ValueType> metrics_;
 
   std::ofstream log_file_;
 
   MetricsRecorder() = delete;
 
+  // Construtor to link to a file
   explicit MetricsRecorder(const std::string& log_filename)
       : log_file_(log_filename) {
     if (not log_file_.is_open())
@@ -42,6 +44,7 @@ class MetricsRecorder final {
           std::format("Cannot open file: {}", log_filename));
   }
 
+  // Creates or updates metric
   void Update(const std::string& name, const ValueType& value) {
     metrics_.update(
         name, [&value](bool, std::pair<const std::string, ValueType>& item) {
@@ -49,17 +52,21 @@ class MetricsRecorder final {
         });
   }
 
+  // Records metrics to a log file and resets them
   void Log();
 
  private:
+   // Thread id that currently logs
   std::atomic<std::thread::id> logging_thread_id_;
 
+  // Resets metrics
   void ClearValues() {
     for (auto it = metrics_.begin(); it != metrics_.end(); ++it)
       Update(it->first, ValueType{});
   }
 };
 
+// Records metrics to a log file and resets them
 template <class ValueType>
 void MetricsRecorder<ValueType>::Log() {
   const auto current_thread_id = std::this_thread::get_id();
