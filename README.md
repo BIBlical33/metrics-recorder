@@ -21,7 +21,7 @@ Each log line includes:
 - A timestamp with millisecond precision
 - Quoted metric names
 - Corresponding values
-**Example:**
+### Example
 ```
 2025-06-01 15:00:01.653 "CPU" 0.97 "HTTP requests RPS" 42
 2025-06-01 15:00:02.653 "CPU" 1.12 "HTTP requests RPS" 30
