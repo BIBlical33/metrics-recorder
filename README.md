@@ -4,7 +4,7 @@
 [![C++20](https://img.shields.io/badge/C++-20-blue.svg)](https://en.cppreference.com/w/cpp/20)
 
 ## Overview
-**Metrics Recorder** is a modern, header-only C++20 library for collecting and logging time-stamped metrics in a lock-free, multi-threaded environment. It is designed for scenarios where event metrics (such as CPU usage or HTTP requests per second) must be recorded with minimal performance overhead and serialized to a human-readable log file.
+**Metrics Recorder** is a header-only C++20 library for collecting and logging time-stamped metrics in a lock-free, multi-threaded environment. It is designed for scenarios where event metrics (such as CPU usage or HTTP requests per second) must be recorded with minimal performance overhead and serialized to a human-readable log file.
 
 ## Features
 - Header-only C++20 library — easy to integrate
