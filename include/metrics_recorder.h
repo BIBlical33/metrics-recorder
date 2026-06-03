@@ -1,13 +1,3 @@
-﻿// All Rights Reserved
-//
-// Copyright (c) 2025, github.com/BIBlical33
-//
-// Metrics recorder
-//
-// This software may not be modified without the explicit permission of the
-// copyright holder. For permission requests, please contact:
-// mag1str.kram@gmail.com
-
 #ifndef INCLUDE_METRICS_RECORDER_H_
 #define INCLUDE_METRICS_RECORDER_H_
 
