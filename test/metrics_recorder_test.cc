@@ -1,13 +1,3 @@
-// All Rights Reserved
-//
-// Copyright (c) 2025, github.com/BIBlical33
-//
-// Metrics recorder test
-//
-// This software may not be modified without the explicit permission of the
-// copyright holder. For permission requests, please contact:
-// mag1str.kram@gmail.com
-
 #include "include/metrics_recorder.h"
 
 #include <cds/gc/hp.h>
